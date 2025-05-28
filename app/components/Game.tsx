@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { Game as GameType } from "~/types";
 import { saveGame, loadGame } from "~/services/save";
 import { useHydrated } from "~/hooks/useHydrated";
-import { happinessFromDopamine } from "~/util/game";
+import { happinessFromDopamine, getTolerance } from "~/util/game";
 
 export function Game() {
   const isHydrated = useHydrated();
@@ -101,10 +101,13 @@ export function Game() {
     <div className="flex flex-col items-center justify-center min-h-screen w-full">
       <div className="flex flex-col items-center gap-4">
         <div className="text-4xl font-bold">
-          Dopamine: {values.unprocessedDopamine.toFixed(1)} /{" "}
-          {values.totalDopamine.toFixed(1)}
+          Dopamine: {Math.round(values.unprocessedDopamine)}
         </div>
-        <div className="text-2xl">Happiness: {values.happiness}</div>
+        <div className="text-2xl">
+          Happiness: {Math.round(values.happiness)}
+          <br />
+          Tolerance: {Math.round(getTolerance(values.totalDopamine))}
+        </div>
         <button
           onClick={handleClick}
           className="text-9xl animate-pulse hover:scale-110 transition-transform cursor-pointer select-none bg-transparent border-none"

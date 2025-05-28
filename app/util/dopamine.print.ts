@@ -2,6 +2,15 @@ import { happinessFromDopamine } from "./game";
 
 const testDopamineConversion = (): void => {
   const testCases = [
+    { unprocessed: 1, total: 50 },
+    { unprocessed: 2, total: 50 },
+    { unprocessed: 3, total: 50 },
+    { unprocessed: 4, total: 50 },
+    { unprocessed: 5, total: 50 },
+    { unprocessed: 6, total: 50 },
+    { unprocessed: 7, total: 50 },
+    { unprocessed: 8, total: 50 },
+    { unprocessed: 9, total: 50 },
     { unprocessed: 10, total: 50 },
     { unprocessed: 100, total: 50 },
     { unprocessed: 1000, total: 50 },
