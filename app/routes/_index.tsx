@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Game } from "~/components/Game";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,5 +9,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  return <div></div>;
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <Game />
+    </div>
+  );
 }
