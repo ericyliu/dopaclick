@@ -1,4 +1,5 @@
 export interface Game {
+  currency: number;
   unprocessedDopamine: number;
   totalDopamine: number;
   happiness: number;
@@ -6,8 +7,6 @@ export interface Game {
 }
 
 export interface BoughtUpgrade extends Upgrade {
-  dopaminePerClick: number;
-  dopaminePerSecond: number;
   amount: number;
 }
 
@@ -15,4 +14,9 @@ export interface Upgrade {
   name: string;
   description: string;
   cost: number;
+  dopaminePerClick: number;
+  dopaminePerSecond: number;
+  currencyPerClick: number;
+  currencyPerSecond: number;
+  unlock: number; // Total dopamine required to unlock this upgrade
 }

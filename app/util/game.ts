@@ -18,10 +18,7 @@ export const happinessFromDopamine = (
   const baseHappiness = Math.max(1, Math.log(1 + dopamineConverted)); // Normalized constant
 
   // Apply total dopamine as a moderating factor with a minimum of 1 for early game
-  const happinessGained = Math.max(
-    1,
-    baseHappiness / getTolerance(totalDopamine)
-  );
+  const happinessGained = baseHappiness / getTolerance(totalDopamine);
 
   return { dopamineConverted, happinessGained };
 };
