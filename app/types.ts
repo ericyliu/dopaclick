@@ -1,5 +1,6 @@
 export interface Game {
-  dopamine: number;
+  unprocessedDopamine: number;
+  totalDopamine: number;
   happiness: number;
   upgrades: BoughtUpgrade[];
 }

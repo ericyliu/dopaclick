@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Game } from "~/components/Game";
+import { Game } from "~/components/game";
 
 export const meta: MetaFunction = () => {
   return [
